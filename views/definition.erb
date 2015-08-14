@@ -7,7 +7,7 @@
       <% @word.definition.each do |definition_item| %>
         <li class="list-group-item"><%= definition_item.definition %>
           <button type="submit" class="btn btn-default btn-xs pull-right">Delete</button>
-          <input type="hidden" name="def_selected" value='<%= definition_item %>'>
+          <input type="hidden" name="def_id" value='<%= definition_item.id %>'>
         </li>
       <% end %>
 

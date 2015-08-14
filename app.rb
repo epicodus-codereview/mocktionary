@@ -25,6 +25,7 @@ end
 post('/definition') do
   @word = Word.find(params.fetch("word_id").to_i)
   new_def = Definition.new(params.fetch('new_def'))
+  new_def.save
   @word.add_definition(new_def)
   erb(:definition)
 end
@@ -36,7 +37,8 @@ post('/delete_word') do
 end
 
 post('/delete_def') do
-  def_selected = params.fetch("def_selected")
-  def_selected.delete
+  def_selected = Definition.find(params.fetch("def_id").to_i)
+  binding.pry
+  def_selected.delete()
   erb(:definition)
 end
