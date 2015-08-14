@@ -5,4 +5,8 @@ class Word
   define_method(:initialize) do |word|
     @word = word
   end
+
+  define_singleton_method(:all) do
+    @@words
+  end
 end

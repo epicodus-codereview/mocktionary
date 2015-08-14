@@ -9,4 +9,9 @@ describe(Word) do
     end
   end
 
+  describe('.all') do
+    it('returns a list of words that is empty at first') do
+      expect(Word.all).to(eq([]))
+    end
+  end
 end
