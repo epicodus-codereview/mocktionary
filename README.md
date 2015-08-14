@@ -6,9 +6,9 @@
 
 ## Description
 
-The user can view the list of available words and add a new word. The number of available definitions of a word is displayed an the user can view the definition by clicking on the word.
+The Mocktionary allows the user to view a list of available words and add a new word. The number of available definitions of a word is displayed and the user can view the definition by clicking on the word.
 
-From the definitions page, the user can also add definitions or delete the word.
+From the definitions page, the user can add definitions or delete the word.
 
 ## Setup
 
@@ -16,7 +16,7 @@ From the definitions page, the user can also add definitions or delete the word.
 * run ruby app.rb
 * navigate to localhost:4567 in your web browser
 
-Please visit https://shrouded-spire-1332.herokuapp.com/ to use the application.
+Please visit https://shielded-reef-3101.herokuapp.com/ to use the application.
 
 ## Technologies Used
 
