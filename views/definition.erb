@@ -4,7 +4,7 @@
 
 <ul class="list-group">
   <% @word.definition.each do |definition_item| %>
-    <li class="list-group-item"><%= definition_item.definition %></li>
+    <li class="list-group-item"><%= definition_item.definition %><button type="button" class="btn btn-default btn-xs pull-right">Delete</button></li>
   <% end %>
 </ul>
 </div>
