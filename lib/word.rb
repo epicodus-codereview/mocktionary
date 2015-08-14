@@ -7,7 +7,7 @@ class Word
   define_method(:initialize) do |word|
     @word = word
     @id = @@words.length + 1
-    @definition = nil
+    @definition = []
   end
 
   define_singleton_method(:all) do
@@ -31,6 +31,6 @@ class Word
   end
 
   define_method(:add_definition) do |definition|
-    @definition = definition
+    @definition.push(definition)
   end
 end
