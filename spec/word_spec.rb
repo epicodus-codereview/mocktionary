@@ -52,7 +52,7 @@ describe(Word) do
       test_word.save()
       test_word2 = Word.new("Splendiferous")
       test_word2.save()
-      expect(Word.find(test_word2.id())).to(eq(test_word2))      
+      expect(Word.find(test_word2.id())).to(eq(test_word2))
     end
   end
 end
