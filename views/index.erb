@@ -1,1 +1,13 @@
+<h2>Words</h2>
+<ul>
+  <% @words.each do |word_item| %>
+    <li><%= word_item.word %></li>
+  <% end %>
+</ul>
 
+<form class="form-group" action="/words" method="post">
+  <label for="new_word">Add Word</label>
+  <input type="text" name="new_word">
+
+  <button type="submit" class="btn btn-primary">Add Word</button>
+</form>
