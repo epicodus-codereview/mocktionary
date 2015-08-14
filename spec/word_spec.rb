@@ -61,7 +61,7 @@ describe(Word) do
     it('returns empty definition initially') do
       test_word = Word.new("Ataraxia")
       test_word.save
-      expect(test_word.definition).to(eq([]))
+      expect(test_word.definition).to(eq(nil))
     end
   end
 
