@@ -1,5 +1,6 @@
 require('rspec')
 require('word')
+require('definition')
 
 describe(Word) do
   describe('#word') do
@@ -18,9 +19,9 @@ describe(Word) do
   describe('#save') do
     it('saves a word to the word list') do
       test_word = Word.new("Yo")
-      test_word.save()
+      test_word.save
       test_word2 = Word.new("Splendiferous")
-      test_word2.save()
+      test_word2.save
       expect(Word.all).to(eq([test_word, test_word2]))
     end
   end
@@ -28,10 +29,10 @@ describe(Word) do
   describe('.clear') do
     it('clears the word list') do
       test_word = Word.new("Yo")
-      test_word.save()
+      test_word.save
       test_word2 = Word.new("Splendiferous")
-      test_word2.save()
-      Word.clear()
+      test_word2.save
+      Word.clear
       expect(Word.all()).to(eq([]))
     end
   end
@@ -39,9 +40,9 @@ describe(Word) do
   describe('#id') do
     it('returns the id number of a word on the list') do
       test_word = Word.new("Yo")
-      test_word.save()
+      test_word.save
       test_word2 = Word.new("Splendiferous")
-      test_word2.save()
+      test_word2.save
       expect(test_word2.id()).to(eq(2))
     end
   end
@@ -49,10 +50,18 @@ describe(Word) do
   describe('.find') do
     it('returns a word by its id number') do
       test_word = Word.new("Yo")
-      test_word.save()
+      test_word.save
       test_word2 = Word.new("Splendiferous")
-      test_word2.save()
+      test_word2.save
       expect(Word.find(test_word2.id())).to(eq(test_word2))
+    end
+  end
+
+  describe('#definition') do
+    it('returns empty definition initially') do
+      test_word = Word.new("Ataraxia")
+      test_word.save
+      expect(test_word.definition).to(eq([]))
     end
   end
 end
