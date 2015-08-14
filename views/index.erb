@@ -1,13 +1,15 @@
-<h2>Words</h2>
-<ul>
-  <% @words.each do |word_item| %>
-    <li><a href='/definition/<%= word_item.id%>'><%= word_item.word %></a></li>
-  <% end %>
-</ul>
+<div class="panel panel-info">
+  <div class="panel-heading"><h1>Mocktionary</h1></div>
+  <ul class="list-group">
+    <% @words.each do |word_item| %>
+      <li class="list-group-item"><a href='/definition/<%= word_item.id%>'><%= word_item.word %></a></li>
+    <% end %>
+  </ul>
+</div>
 
-<form class="form-group" action="/words" method="post">
+<form class="form-inline" action="/words" method="post">
   <label for="new_word">Add Word</label>
-  <input type="text" name="new_word">
+  <input class="form-control" type="text" name="new_word">
 
   <button type="submit" class="btn btn-primary">Add Word</button>
 </form>
