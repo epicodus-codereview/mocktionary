@@ -2,11 +2,18 @@
 <div class="panel panel-info">
   <div class="panel-heading"><h1 class="text-center"><%= @word.word %></h1></div>
 
-<ul class="list-group">
-  <% @word.definition.each do |definition_item| %>
-    <li class="list-group-item"><%= definition_item.definition %><button type="button" class="btn btn-default btn-xs pull-right">Delete</button></li>
-  <% end %>
-</ul>
+    <ul class="list-group">
+      <form action="/delete_def" method="post">
+      <% @word.definition.each do |definition_item| %>
+        <li class="list-group-item"><%= definition_item.definition %>
+          <button type="submit" class="btn btn-default btn-xs pull-right">Delete</button>
+          <input type="hidden" name="def_selected" value='<%= definition_item %>'>
+        </li>
+      <% end %>
+
+    </form>
+    </ul>
+
 </div>
 <br/>
 <form class="form-group" action="/definition" method="post">
@@ -21,8 +28,8 @@
 
 <form action="/delete_word" method="post">
   <input type="hidden" name="word_id" value='<%= @word.id() %>'>
-<button type="submit" class="btn btn-danger">Delete Word</button>
-Warning! The word and definitions will not be retrievable one deleted.
+  <button type="submit" class="btn btn-danger">Delete Word</button>
+  Warning! The word and definitions will not be retrievable one deleted.
 </form>
 
 <br/><br/>

@@ -3,6 +3,7 @@ require('sinatra/reloader')
 also_reload('lib/**/*.rb')
 require('./lib/definition')
 require('./lib/word')
+require('pry')
 
 get('/') do
   @words = Word.all
@@ -32,4 +33,10 @@ post('/delete_word') do
   @word = Word.find(params.fetch("word_id").to_i)
   @word.delete()
   redirect('/')
+end
+
+post('/delete_def') do
+  def_selected = params.fetch("def_selected")
+  def_selected.delete
+  erb(:definition)
 end
