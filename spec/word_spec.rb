@@ -24,4 +24,15 @@ describe(Word) do
       expect(Word.all).to(eq([test_word, test_word2]))
     end
   end
+
+  describe('.clear') do
+    it('clears the word list') do
+      test_word = Word.new("Yo")
+      test_word.save()
+      test_word2 = Word.new("Splendiferous")
+      test_word2.save()
+      Word.clear()
+      expect(Word.all()).to(eq([]))
+    end
+  end
 end
