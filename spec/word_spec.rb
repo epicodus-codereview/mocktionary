@@ -35,4 +35,14 @@ describe(Word) do
       expect(Word.all()).to(eq([]))
     end
   end
+
+  describe('#id') do
+    it('returns the id number of a word on the list') do
+      test_word = Word.new("Yo")
+      test_word.save()
+      test_word2 = Word.new("Splendiferous")
+      test_word2.save()
+      expect(test_word2.id()).to(eq(2))      
+    end
+  end
 end

@@ -1,9 +1,10 @@
 class Word
-  attr_reader(:word)
+  attr_reader(:word, :id)
   @@words = []
 
   define_method(:initialize) do |word|
     @word = word
+    @id = @@words.length + 1
   end
 
   define_singleton_method(:all) do
