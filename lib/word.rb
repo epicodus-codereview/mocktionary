@@ -19,4 +19,11 @@ class Word
     @@words = []
   end
 
+  define_singleton_method(:find) do |id_number|
+    @@words.each do |word|
+      if word.id == id_number.to_i
+        return word
+      end
+    end
+  end
 end

@@ -42,7 +42,17 @@ describe(Word) do
       test_word.save()
       test_word2 = Word.new("Splendiferous")
       test_word2.save()
-      expect(test_word2.id()).to(eq(2))      
+      expect(test_word2.id()).to(eq(2))
+    end
+  end
+
+  describe('.find') do
+    it('returns a word by its id number') do
+      test_word = Word.new("Yo")
+      test_word.save()
+      test_word2 = Word.new("Splendiferous")
+      test_word2.save()
+      expect(Word.find(test_word2.id())).to(eq(test_word2))      
     end
   end
 end
