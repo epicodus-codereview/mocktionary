@@ -29,4 +29,8 @@ class Word
       end
     end
   end
+
+  define_method(:add_definition) do |definition|
+    @definition = definition
+  end
 end
