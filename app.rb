@@ -27,3 +27,9 @@ post('/definition') do
   @word.add_definition(new_def)
   erb(:definition)
 end
+
+post('/delete_word') do
+  @word = Word.find(params.fetch("word_id").to_i)
+  @word.delete()
+  redirect('/')
+end

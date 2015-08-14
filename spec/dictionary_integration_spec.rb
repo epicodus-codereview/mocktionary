@@ -45,3 +45,14 @@ describe('the home path', {:type => :feature}) do
     expect(page).to have_content('Mocktionary')
   end
 end
+
+describe('the delete word path', {:type => :feature}) do
+  it('deletes the current word and returns the user to the home page') do
+    visit('/')
+    fill_in('new_word', :with => 'ineffable')
+    click_button('Add Word')
+    click_link('ineffable')
+    click_button('Delete Word')
+    expect(page).to have_content('Mocktionary')
+  end
+end

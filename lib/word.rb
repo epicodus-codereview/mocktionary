@@ -34,7 +34,7 @@ class Word
     @definition.push(definition)
   end
 
-  define_method(:delete) do |word|
-    @@words.delete(word)
+  define_method(:delete) do
+    @@words.delete(self)
   end
 end

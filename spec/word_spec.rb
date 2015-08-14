@@ -86,7 +86,7 @@ describe(Word) do
       test_word.save
       test_word2 = Word.new("lovelace")
       test_word2.save
-      test_word.delete(test_word)
+      test_word.delete
       expect(Word.all).to(eq([test_word2]))
     end
   end

@@ -18,4 +18,12 @@
   <button type="submit" class="btn btn-primary">Add Definition</button>
 </form>
 <br/>
-<a href="/">Back to Word List</a>
+
+<form action="/delete_word" method="post">
+  <input type="hidden" name="word_id" value='<%= @word.id() %>'>
+<button type="submit" class="btn btn-danger">Delete Word</button>
+Warning! The word and definitions will not be retrievable one deleted.
+</form>
+
+<br/><br/>
+<p><a href="/">Back to Word List</a></p>
