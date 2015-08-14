@@ -1,5 +1,7 @@
+<div class="row">
+  <div class="col-md-6">
 <div class="panel panel-info">
-  <div class="panel-heading"><h1>Mocktionary</h1></div>
+  <div class="panel-heading"><h1 class="text-center">Mocktionary</h1></div>
   <div class="list-group">
     <% @words.each do |word_item| %>
       <a href='/definition/<%= word_item.id%>' class="list-group-item"><span class="badge"><%= word_item.definition.length%></span><%= word_item.word %></a>
@@ -13,3 +15,5 @@
 
   <button type="submit" class="btn btn-primary">Add Word</button>
 </form>
+</div>
+</div>
