@@ -34,3 +34,14 @@ describe('the add definition path', {:type => :feature}) do
     expect(page).to have_content('A condition characterized by freedom from worry or any other pre-occupation of reality.')
   end
 end
+
+describe('the home path', {:type => :feature}) do
+  it('returns the user to the home page') do
+    visit('/')
+    fill_in('new_word', :with => 'lovelace')
+    click_button('Add Word')
+    click_link('lovelace')
+    click_link('Back to Word List')
+    expect(page).to have_content('Words')
+  end
+end
