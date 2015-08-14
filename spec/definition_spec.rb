@@ -35,4 +35,15 @@ describe(Definition) do
       expect(Definition.all).to(eq([]))
     end
   end
+
+  describe('#delete') do
+    it('deletes a definition from the list') do
+      test_def = Definition.new("Fear of the number 10")
+      test_def.save
+      test_def2 = Definition.new("A condition characterized by freedom from worry or any other pre-occupation of reality")
+      test_def2.save
+      test_def.delete
+      expect(Definition.all).to(eq([test_def2]))
+    end
+  end
 end

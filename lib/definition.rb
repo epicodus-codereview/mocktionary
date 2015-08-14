@@ -18,4 +18,8 @@ class Definition
   define_singleton_method(:clear) do
     @@definitions= []
   end
+
+  define_method(:delete) do
+    @@definitions.delete(self)
+  end
 end
