@@ -1,7 +1,7 @@
 <h2>Words</h2>
 <ul>
   <% @words.each do |word_item| %>
-    <li><%= word_item.word %></li>
+    <li><a href='/definition/<%= word_item.id%>'><%= word_item.word %></a></li>
   <% end %>
 </ul>
 

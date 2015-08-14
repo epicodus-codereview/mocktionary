@@ -12,3 +12,13 @@ describe('the add word path', {:type => :feature}) do
     expect(page).to have_content('ataraxia')
   end
 end
+
+describe('the see definition path', {:type => :feature}) do
+  it('navigates to the link with the definition of the selected word') do
+    visit('/')
+    fill_in('new_word', :with => 'viscosity')
+    click_button('Add Word')
+    click_link('viscosity')
+    expect(page).to have_content('viscosity')
+  end
+end

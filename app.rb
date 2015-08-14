@@ -15,3 +15,8 @@ post('/words') do
   @words = Word.all
   redirect('/')
 end
+
+get('/definition/:id') do
+  @word = Word.find(params.fetch('id').to_i)
+  erb(:definition)
+end
