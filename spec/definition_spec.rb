@@ -24,4 +24,15 @@ describe(Definition) do
       expect(Definition.all).to(eq([test_def, test_def2]))
     end
   end
+
+  describe('.clear') do
+    it('clears the list of definitions') do
+      test_def = Definition.new("Fear of the number 10")
+      test_def.save()
+      test_def2 = Definition.new("A condition characterized by freedom from worry or any other pre-occupation of reality")
+      test_def2.save()
+      Definition.clear()
+      expect(Definition.all).to(eq([]))
+    end
+  end
 end
