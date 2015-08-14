@@ -1,20 +1,22 @@
-<h2>Definitions</h2>
 
-<%= @word.word %>
+<div class="panel panel-info">
+  <div class="panel-heading"><h1><%= @word.word %></h1></div>
+  <div class="panel-body"><h3>Definitions</h3></div>
 
-<ul>
+<ul class="list-group">
   <% @word.definition.each do |definition_item| %>
-    <li><%= definition_item.definition %></li>
+    <li class="list-group-item"><%= definition_item.definition %></li>
   <% end %>
 </ul>
-
+</div>
+<br/>
 <form class="form-group" action="/definition" method="post">
-  <input type="text" name="word_id" value='<%= @word.id() %>'>
+  <input type="hidden" name="word_id" value='<%= @word.id() %>'>
 
   <label for="new_def">Add Definition</label>
-  <input type="text" name="new_def">
-
+  <input class="form-control" type="text" name="new_def">
+  <br/>
   <button type="submit" class="btn btn-primary">Add Definition</button>
 </form>
-
+<br/>
 <a href="/">Back to Word List</a>

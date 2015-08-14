@@ -1,12 +1,12 @@
 <div class="panel panel-info">
   <div class="panel-heading"><h1>Mocktionary</h1></div>
-  <ul class="list-group">
+  <div class="list-group">
     <% @words.each do |word_item| %>
-      <li class="list-group-item"><a href='/definition/<%= word_item.id%>'><%= word_item.word %></a></li>
+      <a href='/definition/<%= word_item.id%>' class="list-group-item"><span class="badge"><%= word_item.definition.length%></span><%= word_item.word %></a>
     <% end %>
-  </ul>
+  </div>
 </div>
-
+<br/>
 <form class="form-inline" action="/words" method="post">
   <label for="new_word">Add Word</label>
   <input class="form-control" type="text" name="new_word">

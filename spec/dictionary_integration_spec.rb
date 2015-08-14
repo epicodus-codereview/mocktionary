@@ -42,6 +42,6 @@ describe('the home path', {:type => :feature}) do
     click_button('Add Word')
     click_link('lovelace')
     click_link('Back to Word List')
-    expect(page).to have_content('Words')
+    expect(page).to have_content('Mocktionary')
   end
 end
