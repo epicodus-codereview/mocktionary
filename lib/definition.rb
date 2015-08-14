@@ -5,7 +5,7 @@ class Definition
 
   define_method(:initialize) do |definition|
     @definition = definition
-    @id = @@definitions.length
+    @id = @@definitions.length + 1
   end
 
   define_singleton_method(:all) do
@@ -22,5 +22,13 @@ class Definition
 
   define_method(:delete) do
     @@definitions.delete(self)
+  end
+
+  define_singleton_method(:find) do |id_number|
+    @@definitions.each do |definition|
+      if definition.id == id_number.to_i
+        return definition
+      end
+    end
   end
 end
