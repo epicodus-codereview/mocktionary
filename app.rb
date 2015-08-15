@@ -37,7 +37,8 @@ post('/delete_word') do
 end
 
 post('/delete_def') do
+  @word = Word.find(params.fetch("word_id").to_i)
   def_selected = Definition.find(params.fetch("def_id").to_i)
-  def_selected.delete()
+  @word.delete_definition(def_selected)
   erb(:definition)
 end

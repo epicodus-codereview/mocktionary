@@ -90,4 +90,19 @@ describe(Word) do
       expect(Word.all).to(eq([test_word2]))
     end
   end
+
+  describe('#delete_definition') do
+    it('adds definition to a word') do
+      test_word = Word.new("ataraxia")
+      test_word.save
+      test_def = Definition.new("A condition characterized by freedom from worry or any other pre-occupation of reality.")
+      test_def.save
+      test_word.add_definition(test_def)
+      test_def2 = Definition.new("calm and serene.")
+      test_def2.save
+      test_word.add_definition(test_def2)
+      test_word.delete_definition(test_def)
+      expect(test_word.definition).to(eq([test_def2]))
+    end
+  end
 end

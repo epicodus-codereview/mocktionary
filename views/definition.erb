@@ -4,13 +4,13 @@
 
     <ul class="list-group">
       <form action="/delete_def" method="post">
-      <% @word.definition.each do |definition_item| %>
-        <li class="list-group-item"><%= definition_item.definition %>
-          <button type="submit" class="btn btn-default btn-xs pull-right">Delete</button>
-          <input type="hidden" name="def_id" value='<%= definition_item.id %>'>
-        </li>
-      <% end %>
-
+        <input type="hidden" name="word_id" value='<%= @word.id() %>'>
+        <% @word.definition.each do |definition_item| %>
+          <li class="list-group-item"><%= definition_item.definition %>
+            <button type="submit" class="btn btn-default btn-xs pull-right">Delete</button>
+            <input type="hidden" name="def_id" value='<%= definition_item.id %>'>
+          </li>
+        <% end %>
     </form>
     </ul>
 
