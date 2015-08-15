@@ -36,9 +36,11 @@ class Word
 
   define_method(:delete_definition) do |definition|
     @definition.delete(definition)
+
+    definition.remove
   end
 
-  define_method(:delete) do
+  define_method(:remove) do
     @@words.delete(self)
 
     index = 1
@@ -47,4 +49,5 @@ class Word
       index = index + 1
     end
   end
+
 end

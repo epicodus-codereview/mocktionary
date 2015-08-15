@@ -1,5 +1,6 @@
 class Definition
-  attr_reader(:definition, :id)
+  attr_reader(:definition)
+  attr_accessor(:id)
 
   @@definitions = []
 
@@ -20,8 +21,14 @@ class Definition
     @@definitions = []
   end
 
-  define_method(:delete) do
+  define_method(:remove) do
     @@definitions.delete(self)
+
+    index = 1
+    @@definitions.each do |definition|
+      definition.id = index
+      index = index + 1
+    end
   end
 
   define_singleton_method(:find) do |id_number|

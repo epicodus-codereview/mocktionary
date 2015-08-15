@@ -32,7 +32,7 @@ end
 
 post('/delete_word') do
   @word = Word.find(params.fetch("word_id").to_i)
-  @word.delete()
+  @word.remove()
   redirect('/')
 end
 

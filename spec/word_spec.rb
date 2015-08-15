@@ -80,19 +80,19 @@ describe(Word) do
     end
   end
 
-  describe('#delete') do
-    it('deletes word from word list') do
+  describe('#remove') do
+    it('removes word from word list') do
       test_word = Word.new("ataraxia")
       test_word.save
       test_word2 = Word.new("lovelace")
       test_word2.save
-      test_word.delete
+      test_word.remove
       expect(Word.all).to(eq([test_word2]))
     end
   end
 
   describe('#delete_definition') do
-    it('adds definition to a word') do
+    it('deletes definition to a word') do
       test_word = Word.new("ataraxia")
       test_word.save
       test_def = Definition.new("A condition characterized by freedom from worry or any other pre-occupation of reality.")
