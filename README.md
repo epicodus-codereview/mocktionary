@@ -1,6 +1,6 @@
 # Mocktionary
 
-##### Allows the user to enter a sentence and word and returns the number of times the word occurs in the sentence, August 14 2015
+##### Displays a list of words and allows the user to view, add, and delete definitions. Also allows user to add new words and add definitions, August 14 2015
 
 #### By Janice Laset-Parkerson
 
