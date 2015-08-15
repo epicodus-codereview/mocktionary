@@ -19,8 +19,7 @@
 <form class="form-group" action="/definition" method="post">
   <input type="hidden" name="word_id" value='<%= @word.id() %>'>
 
-  <label for="new_def">Add Definition</label>
-  <input class="form-control" type="text" name="new_def">
+  <input class="form-control" type="text" name="new_def" placeholder="New Definition">
   <br/>
   <button type="submit" class="btn btn-primary">Add Definition</button>
 </form>
