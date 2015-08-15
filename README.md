@@ -6,9 +6,9 @@
 
 ## Description
 
-The Mocktionary allows the user to view a list of available words and add a new word. The number of available definitions of a word is displayed and the user can view the definition by clicking on the word.
+The Mocktionary allows the user to view a list of available words and add a new word. The number of available definitions for a word is displayed on the row, and the user can view the definition by clicking on the word.
 
-From the definitions page, the user can add definitions or delete the word.
+From the definitions page, the user can add or delete definitions or delete the word.
 
 ## Setup
 
@@ -24,7 +24,6 @@ Please visit https://shielded-reef-3101.herokuapp.com/ to use the application.
 * Capybara
 * rspec
 
-Note: Word color on web interface not tested with rspec
 
 ### Legal
 
