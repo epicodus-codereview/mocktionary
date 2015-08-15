@@ -38,7 +38,6 @@ end
 
 post('/delete_def') do
   def_selected = Definition.find(params.fetch("def_id").to_i)
-  binding.pry
   def_selected.delete()
   erb(:definition)
 end

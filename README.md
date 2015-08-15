@@ -10,6 +10,10 @@ The Mocktionary allows the user to view a list of available words and add a new 
 
 From the definitions page, the user can add definitions or delete the word.
 
+## Known Issues
+
+* Causes internal error when user deletes individual definitions
+
 ## Setup
 
 * git clone https://github.com/janicelaset/mocktionary.git
