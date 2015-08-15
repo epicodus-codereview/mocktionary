@@ -1,6 +1,6 @@
 class Word
-  attr_reader(:word, :id)
-  attr_accessor(:definition)
+  attr_reader(:word)
+  attr_accessor(:definition, :id)
 
   @@words = []
 
@@ -36,5 +36,11 @@ class Word
 
   define_method(:delete) do
     @@words.delete(self)
+
+    index = 1
+    @@words.each do |word|
+      word.id = index
+      index = index + 1
+    end
   end
 end
